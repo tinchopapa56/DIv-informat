@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Microsoft.EntityFramework;
+// using Microsoft.EntityFramework;
 
 namespace Prokect.Domains
 {
@@ -33,8 +34,11 @@ namespace Prokect.Domains
         [Key]
         public int Consulta_id {get;set;}
 
-        [ForeignKey("Medico")]
-        public int Medico_Id   {get;set;}
+        [System.ComponentModel.DataAnnotations.Schema.ForeignKey("MedicoId")]
+        public int MedicoId   {get;set;}
+        
+        // [System.ComponentModel.DataAnnotations.Schema.ForeignKey("PacienteId")]
+        // public int PacienteId   {get;set;}
         public DateTime Fecha {get;set;}
         public int Costo {get;set;}
         public int CostoMateriales {get;set;}   //float
